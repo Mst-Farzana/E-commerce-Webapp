@@ -1,0 +1,36 @@
+{
+  "name": "ecommarce-webapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tailwind CSS 4 + Vue 3 web app",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d dist"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "jwt-decode": "^3.1.2",
+    "mitt": "^3.0.1",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.17",
+    "vue-i18n": "^12.0.0-alpha.3",
+    "vue-router": "^4.5.1",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/vite": "^4.0.9",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "daisyui": "^5.0.27",
+    "gh-pages": "^6.3.0",
+    "tailwindcss": "^4.0.9",
+    "vite": "^6.3.5"
+  }
+}

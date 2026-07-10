@@ -3,8 +3,9 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 import { fallbackCategoryItems } from '../../data/fallbackData';
 import emitter from '../../eventBus';
-import { api, API_BASE } from '../../utils/api';
+import { api } from '../../utils/api';
 import { getCategoryImageUrl } from '../../utils/categoryImages';
+import { resolveImageUrl } from '../../utils/imageUrl';
 import AddProduct from '../menu/Add.vue';
 import OrderForm from '../order/OrderForm.vue';
 
@@ -59,10 +60,8 @@ const closeEditForm = () => {
 };
 
 const getImageUrl = img => {
-  if (!img) return 'https://via.placeholder.com/400x300?text=No+Image';
-  if (img.startsWith('http')) return img;
-  if (img.startsWith('/uploads/')) return `${API_BASE}${img}`;
-  return `${API_BASE}/images/${img.replace(/^\/+/, '')}`;
+  const resolved = resolveImageUrl(img);
+  return resolved || 'https://via.placeholder.com/400x300?text=No+Image';
 };
 
 const handleOrder = product => {

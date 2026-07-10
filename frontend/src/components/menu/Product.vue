@@ -2,8 +2,9 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { fallbackCategoryItems } from '../../data/fallbackData';
 import emitter from '../../eventBus';
-import { api, API_BASE } from '../../utils/api';
+import { api } from '../../utils/api';
 import { getCategoryImageUrl } from '../../utils/categoryImages';
+import { resolveImageUrl } from '../../utils/imageUrl';
 import OrderList from '../order/AdminOrderList.vue';
 import OrderForm from '../order/OrderForm.vue';
 
@@ -25,10 +26,7 @@ const error = ref('');
 
 // ✅ ইমেজ URL ঠিক করা
 const getImageUrl = img => {
-  if (!img) return '';
-  if (img.startsWith('http')) return img;
-  if (img.startsWith('/uploads/')) return `${API_BASE}${img}`;
-  return `${API_BASE}/images/${img.replace(/^\/+/, '')}`;
+  return resolveImageUrl(img);
 };
 
 // ✅ সঠিক getImageSrc

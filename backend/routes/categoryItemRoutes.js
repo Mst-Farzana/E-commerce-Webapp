@@ -54,7 +54,10 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const item = new CategoryItem({ category, name, details, img, price });
+    const normalizedImg =
+      img.startsWith('http') || img.startsWith('/uploads/') ? img : `/uploads/${img}`;
+
+    const item = new CategoryItem({ category, name, details, img: normalizedImg, price });
     await item.save();
     res.status(201).json(item);
   } catch (err) {

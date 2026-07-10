@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useAdminAuthStore } from '../stores/adminAuth';
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://ecommerce-backend-0kft.onrender.com';
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 // Request Interceptor: Attach accessToken
-api.interceptors.request.use((config) => {
+api.interceptors.request.use(config => {
   const adminAuth = useAdminAuthStore();
   const token = adminAuth.accessToken || localStorage.getItem('accessToken');
 
@@ -25,7 +25,7 @@ let isRefreshing = false;
 let failedQueue = [];
 
 const processQueue = (error, token = null) => {
-  failedQueue.forEach((prom) => {
+  failedQueue.forEach(prom => {
     if (error) {
       prom.reject(error);
     } else {
@@ -37,8 +37,8 @@ const processQueue = (error, token = null) => {
 
 // Response Interceptor: Handle 401
 api.interceptors.response.use(
-  (response) => response,
-  async (error) => {
+  response => response,
+  async error => {
     const adminAuth = useAdminAuthStore();
     const originalRequest = error.config;
 
@@ -49,11 +49,11 @@ api.interceptors.response.use(
           return new Promise((resolve, reject) => {
             failedQueue.push({ resolve, reject });
           })
-            .then((token) => {
+            .then(token => {
               originalRequest.headers['Authorization'] = 'Bearer ' + token;
               return api(originalRequest);
             })
-            .catch((err) => Promise.reject(err));
+            .catch(err => Promise.reject(err));
         }
 
         originalRequest._retry = true;

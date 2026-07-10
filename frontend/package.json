@@ -1,6 +1,7 @@
 {
   "name": "ecommarce-webapp",
   "version": "1.0.0",
+  "homepage": "https://mst-farzana.github.io/E-commerce-Webapp/",
   "private": true,
   "description": "Tailwind CSS 4 + Vue 3 web app",
   "license": "ISC",

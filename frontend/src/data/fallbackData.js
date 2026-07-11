@@ -37,7 +37,7 @@ export const fallbackCategoryItems = [
     category: 'Dress',
     name: 'Floral Summer Dress',
     details: 'Lightweight floral dress perfect for summer outings.',
-    img: '/dress/1.jpg',
+    img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=600&fit=crop',
     price: 3200,
   },
   {
@@ -45,7 +45,7 @@ export const fallbackCategoryItems = [
     category: 'Cosmetics',
     name: 'Matte Lipstick',
     details: 'Long-lasting matte lipstick for everyday wear.',
-    img: '/cosmetics/1.jpg',
+    img: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&h=600&fit=crop',
     price: 600,
   },
   {
@@ -53,7 +53,7 @@ export const fallbackCategoryItems = [
     category: 'Jewelry',
     name: 'Gold Necklace',
     details: 'Elegant gold-plated necklace with fine details.',
-    img: '/jewelary/1.jpg',
+    img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&h=600&fit=crop',
     price: 5800,
   },
   {
@@ -61,7 +61,7 @@ export const fallbackCategoryItems = [
     category: 'Bag',
     name: 'Leather Handbag',
     details: 'Premium leather handbag with multiple compartments.',
-    img: '/bag/1.jpg',
+    img: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&h=600&fit=crop',
     price: 4300,
   },
   {
@@ -69,7 +69,7 @@ export const fallbackCategoryItems = [
     category: 'Watch',
     name: 'Analog Watch',
     details: 'Classic analog watch with leather strap.',
-    img: '/watch/1.jpg',
+    img: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500&h=600&fit=crop',
     price: 4900,
   },
   {
@@ -77,7 +77,7 @@ export const fallbackCategoryItems = [
     category: 'Phone',
     name: 'Smartphone A10',
     details: 'Entry-level smartphone with a crisp display.',
-    img: '/phone/1.jpg',
+    img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=600&fit=crop',
     price: 12500,
   },
   {
@@ -85,7 +85,7 @@ export const fallbackCategoryItems = [
     category: 'Kids Item',
     name: 'Kids Toy Set',
     details: 'Fun toy set for children aged 4-8 years.',
-    img: '/kids/1.jpg',
+    img: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=600&fit=crop',
     price: 950,
   },
   {
@@ -93,7 +93,7 @@ export const fallbackCategoryItems = [
     category: 'Shoe',
     name: 'Running Shoes',
     details: 'Comfortable running shoes for daily workouts.',
-    img: '/shoe/1.jpg',
+    img: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500&h=600&fit=crop',
     price: 2200,
   },
 ];
